@@ -29,3 +29,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    # ... 前面的 Tesseract 和图形库保持不变 ...
+    libxrender1 \
+    libxtst6 \
+    # 加入 FFmpeg
+    ffmpeg \
+    # 常用工具
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
